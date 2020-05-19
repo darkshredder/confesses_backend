@@ -6,8 +6,8 @@ class Confession(models.Model):
     his_her_name = models.CharField(max_length=100, blank=True, default='')
     his_her_branch_year_hostel = models.CharField(max_length=100, blank=True, default='')
     your_name_branch_year_hostel = models.CharField(max_length=100, blank=True, default='')
-    your_confession = models.TextField()
-    to_moderator = models.TextField()
+    your_confession = models.TextField(null=True, blank=True)
+    to_moderator = models.TextField(null=True, blank=True)
 
     
     class Meta:

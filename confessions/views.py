@@ -9,18 +9,12 @@ from rest_framework import generics
 
 # Create your views here.
 
-
-class ConfessionList(generics.ListCreateAPIView):
+class ConfessionList(APIView):
     
     #List all code Articles, or create a new Article.
-
-    queryset = Confession.objects.all()
-    serializer_class = ConfessionSerializer
-    
-
-class ConfessionDetail(generics.RetrieveUpdateDestroyAPIView):
-    #Retrieve, update or delete a Article.
-
-    queryset = Confession.objects.all()
-    serializer_class = ConfessionSerializer
-    
+    def post(self, request, format=None):
+        serializer = ConfessionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
