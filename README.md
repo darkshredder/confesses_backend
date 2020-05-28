@@ -1,4 +1,4 @@
-# iitr_confesses_backend
+# confesses_backend
 ## Installations
 ### 
     Fork this repo
@@ -6,9 +6,9 @@
     python3 -m venv env
 ### 
     git clone
-    https://github.com/<:username>/iitr_confesses_backend.git
+    https://github.com/<:username>/confesses_backend.git
 ###  
-    cd iitr_confesses_backend
+    cd confesses_backend
 ### 
     pip install -r requirements.txt
 ## starting app
